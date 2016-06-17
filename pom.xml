@@ -1,7 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sqa.rd</groupId>
+<<<<<<< HEAD
   <artifactId>divisor-project</artifactId>
+=======
+  <artifactId>divior-project</artifactId>
+>>>>>>> b49aef634f8ffc486020a0fbebd7bc4f850e859f
   <version>1.0-SNAPSHOT</version>
   <name>Divisor Project</name>
   <description>Divisor Project</description>
