@@ -1,4 +1,9 @@
-# basic-project
-Basic Project 
+# Divisor Project - Automation Branch
+Automation Project for Divisor class
 Created by " Richa Dighe
-The project is used to add the reports that will be created during the boot camp , it will have different branches to track the project.
+
+* java
+* *maven
+* *TestNG
+* 
+This project is created to read the CSV file data and do an automation test to check if 2 numbers are divisible or not.
