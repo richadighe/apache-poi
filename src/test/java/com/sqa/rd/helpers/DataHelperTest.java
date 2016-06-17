@@ -2,7 +2,6 @@ package com.sqa.rd.helpers;
 
 import org.testng.*;
 import org.testng.annotations.*;
-import org.testng.annotations.Test;
 
 import com.sqa.rd.helpers.data.*;
 
@@ -19,21 +18,19 @@ public class DataHelperTest {
 	}
 
 	@Test(dataProvider = "textDivisible")
-	public void textDivisibleFile(int num1, int num2, boolean divisible) {
+	public void textDivisibleFile(int number, int divisor, boolean divisible) {
 		try {
-			// System.out.println("Number " + num1 + ", is divisible by " + num2
-			// + ")");
-			boolean actualResult = isDivisible(num1, num2);
+			boolean actualResult = isDivisible(number, divisor);
 			Assert.assertEquals(actualResult, divisible, "Number is not divisible.");
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 		}
 	}
 
-	private boolean isDivisible(int num1, int num2) {
+	private boolean isDivisible(int number, int divisor) {
 		// TODO Auto-generated method stub
 		boolean isPrime = false;
-		if (num1 % num2 == 0) {
+		if (number % divisor == 0) {
 			isPrime = true;
 		}
 		return isPrime;
