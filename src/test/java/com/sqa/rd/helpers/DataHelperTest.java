@@ -7,37 +7,34 @@ import org.testng.annotations.Test;
 import com.sqa.rd.helpers.data.*;
 
 public class DataHelperTest {
-	@DataProvider(name = "textData")
-	public Object[][] getData() {
+	/* iddivisible test case check */
+	@DataProvider(name = "textDivisible")
+	public Object[][] getData1() {
 		Object[][] data;
 
-		data = DataHelper.getTextFileData("C:\\Users\\Richa\\workspace\\basic-project\\src\\main\\resources\\",
-				"data1.csv", TextFormat.CSV, true);
-
-		// data =
-		// DataHelper.getTextFileData("/basic-project/src/main/resources/",
-		// "data1.csv", TextFormat.CSV, true);
+		data = DataHelper.getTextFileData("C:\\Users\\Richa\\workspace\\divisor-project\\src\\main\\resources\\",
+				"data.csv", TextFormat.CSV, true, Integer.TYPE, Integer.TYPE, Boolean.TYPE);
 		DisplayHelper.multArray(data);
 		return data;
 	}
 
-	@Test(dataProvider = "textData")
-	public void textReadingFile(String number, String isPrime) {
+	@Test(dataProvider = "textDivisible")
+	public void textDivisibleFile(int num1, int num2, boolean divisible) {
 		try {
-			System.out.println("Number " + number + ", is Prime? (" + isPrime + ")");
-			boolean actualResult = isPrime(Integer.parseInt(number));
-			Assert.assertEquals(actualResult, Boolean.parseBoolean(isPrime), "Number is not prime based on data set.");
+			// System.out.println("Number " + num1 + ", is divisible by " + num2
+			// + ")");
+			boolean actualResult = isDivisible(num1, num2);
+			Assert.assertEquals(actualResult, divisible, "Number is not divisible.");
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 		}
 	}
 
-	private boolean isPrime(int number) {
-		boolean isPrime = true;
-		for (int i = 2; i <= number / 2; i++) {
-			if (number % i == 0) {
-				isPrime = false;
-			}
+	private boolean isDivisible(int num1, int num2) {
+		// TODO Auto-generated method stub
+		boolean isPrime = false;
+		if (num1 % num2 == 0) {
+			isPrime = true;
 		}
 		return isPrime;
 	}
